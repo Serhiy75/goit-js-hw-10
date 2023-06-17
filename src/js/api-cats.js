@@ -29,15 +29,4 @@ export function fetchCats(breedId) {
         .catch(error => {
             throw error;
         });
-}
-
-
-
-// export function getCats(limit, breed) {
-//     const BASE_URL = 'https://api.thecatapi.com/v1'
-//     const API_KEY = 'live_mvluJloDqpPMSibFaxnqZXHPWnuJr0rH1ZaRdiBtFsuEcv41LFitS2eTahpi5gyL';
-//     https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=REPLACE_ME
-//     fetch(`${BASE_URL}/images/search?limit=${limit}&breed_ids=${breed}&api_key=${API_KEY}`)
-//     then(resp => console.log(resp))
-// }
-// getCats()
+};
