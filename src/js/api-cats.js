@@ -29,4 +29,4 @@ export function fetchCats(breedId) {
         .catch(error => {
             throw error;
         });
-};
+}
