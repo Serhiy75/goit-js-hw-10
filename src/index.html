@@ -4,13 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 10</title>
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <select class="breed-select"></select>
-    <p class="loader">Loading data, please wait...</p>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info"></div>
+    <div class="container">
+      <select class="breed-select"></select>
+      <p class="loader">Loading data, please wait...</p>
+      <p class="error">Oops! Something went wrong! Try reloading the page!</p>
+      <div class="cat-info">
+        <img class="cat-image" src="#" alt="Cat Image">
+        <div class="cat-text">
+          <h2 class="cat-name"></h2>
+          <p class="cat-description"></p>
+          <p class="cat-temperament"></p>
+        </div>
+      </div>
+    </div>
 
+    <script src="./js/api-cats.js" type="module"></script>
     <script src="./js/index.js" type="module"></script>
   </body>
 </html>

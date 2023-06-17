@@ -1,0 +1,33 @@
+body{
+    font-size: 24px;
+}
+.container{
+    padding: 20px;
+}
+.breed-select{
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.cat-image {
+    margin-top: 30px;
+    max-width: 650px;
+    height: auto;
+}
+
+.cat-info {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.cat-description{
+    max-width: 500px;
+}
+
+.cat-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+}
