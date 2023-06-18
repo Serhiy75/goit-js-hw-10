@@ -14,7 +14,7 @@ export function fetchBreeds() {
         });
 };
 
-export function fetchCats(breedId) {
+export function fetchCatByBreed(breedId) {
     const url = `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`;
     const apiKey = 'live_mvluJloDqpPMSibFaxnqZXHPWnuJr0rH1ZaRdiBtFsuEcv41LFitS2eTahpi5gyL';
 

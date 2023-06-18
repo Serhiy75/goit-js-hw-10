@@ -1,4 +1,4 @@
-import { fetchBreeds, fetchCats } from "./cat-api.js";    
+import { fetchBreeds, fetchCatByBreed } from "./cat-api.js";    
 import Notiflix from 'notiflix';
 
 const breedSelect = document.querySelector('.breed-select');
@@ -43,7 +43,7 @@ breedSelect.addEventListener('change', () => {
     
     loadingState(true);
 
-    fetchCats(breedId)
+    fetchCatByBreed(breedId)
         .then(cat => {
             displayCatInfo(cat);
             loadingState(false);
