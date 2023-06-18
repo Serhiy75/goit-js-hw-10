@@ -1,4 +1,3 @@
-
 export function fetchBreeds() {
     const url = 'https://api.thecatapi.com/v1/breeds';
     const apiKey = 'live_mvluJloDqpPMSibFaxnqZXHPWnuJr0rH1ZaRdiBtFsuEcv41LFitS2eTahpi5gyL';
