@@ -12,7 +12,7 @@ export function fetchBreeds() {
         .catch(error => {
             throw error;
         });
-}
+};
 
 export function fetchCats(breedId) {
     const url = `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`;
@@ -28,4 +28,4 @@ export function fetchCats(breedId) {
         .catch(error => {
             throw error;
         });
-}
+};

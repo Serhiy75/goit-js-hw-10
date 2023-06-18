@@ -1,4 +1,5 @@
-import { fetchBreeds, fetchCats } from "./api-cats";    
+import { fetchBreeds, fetchCats } from "./cat-api.js";    
+import Notiflix from 'notiflix';
 
 const breedSelect = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
@@ -48,11 +49,13 @@ breedSelect.addEventListener('change', () => {
             loadingState(false);
         })
         .catch(error => {
-            console.error(error);
+            console.log('Oops! Something went wrong! Try reloading the page!', error);
             loadingState(false);
-            error.style.display = 'block';
+            Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
         });
 });
+
+
 
 loadingState(true);
 
@@ -62,7 +65,7 @@ fetchBreeds()
         loadingState(false);
     })
     .catch(error => {
-        console.error(error);
+        console.log('Oops! Something went wrong! Try reloading the page!', error);
         loadingState(false);
-        error.style.display = 'block';
+        Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
     });
