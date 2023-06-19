@@ -4,39 +4,39 @@ import Notiflix from 'notiflix';
 const breedSelect = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
 const catInfo = document.querySelector('.cat-info');
-const catImage = document.querySelector('.cat-image');
-const catName = document.querySelector('.cat-name');
-const catDescription = document.querySelector('.cat-description');
-const catTemperament = document.querySelector('.cat-temperament');
 const error = document.querySelector('.error');
 
 function catBreedSelect(breeds) {
-    breeds.forEach(breed => {
-        const option = document.createElement('option');
-        option.value = breed.id;
-        option.textContent = breed.name;
-        breedSelect.appendChild(option);  
-    });
+    const markup = breeds.map(breed => {
+        return `<option value="${breed.id}">${breed.name}</option>`
+    }).join('');
+    breedSelect.insertAdjacentHTML("beforeend", markup);
 }
 
 function loadingState(loading) {
+   error.style.display = 'none';
     if (loading) {
         breedSelect.style.display = 'none';
         loader.style.display = 'block';
         catInfo.style.display = 'none';
-        error.style.display = 'none';
+        
     } else {
         breedSelect.style.display = 'block';
-        loader.style.display = 'none'; 
+        loader.style.display = 'none';
+        catInfo.style.display = 'flex';
     }
 }
 
 function displayCatInfo(cat) {
-    catImage.src = cat.url;
-    catName.textContent = cat.breeds[0].name;
-    catDescription.textContent = cat.breeds[0].description;
-    catTemperament.textContent = `Temperament: ${cat.breeds[0].temperament}`;
-    catInfo.style.display = 'flex';
+    console.log(cat);
+ const markup = `
+        <img class="cat-image" src="${cat.url}" alt="Cat Image">
+        <div class="cat-text">
+          <h2 class="cat-name">${cat.breeds[0].name}</h2>
+          <p class="cat-description">${cat.breeds[0].description}</p>
+          <p class="cat-temperament">${cat.breeds[0].temperament}</p>
+        </div>`
+    catInfo.innerHTML = markup;
 }
 breedSelect.addEventListener('change', () => {
     const breedId = breedSelect.value;
@@ -51,6 +51,7 @@ breedSelect.addEventListener('change', () => {
         .catch(error => {
             console.log('Oops! Something went wrong! Try reloading the page!', error);
             loadingState(false);
+            catInfo.innerHTML = '';
             Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
         });
 });
